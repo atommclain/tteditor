@@ -14,7 +14,13 @@
 		5C224F0714A97597005B6FF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C224F0614A97597005B6FF9 /* main.m */; };
 		5C224F0B14A97597005B6FF9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C224F0A14A97597005B6FF9 /* AppDelegate.m */; };
 		5C224F0E14A97597005B6FF9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C224F0C14A97597005B6FF9 /* MainStoryboard.storyboard */; };
-		5C224F1114A97597005B6FF9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C224F1014A97597005B6FF9 /* ViewController.m */; };
+		5C224F1914A97656005B6FF9 /* FloorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C224F1814A97656005B6FF9 /* FloorsTableViewController.m */; };
+		5C224F2014A977ED005B6FF9 /* Bitizen.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C224F1B14A977EC005B6FF9 /* Bitizen.m */; };
+		5C224F2114A977ED005B6FF9 /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C224F1D14A977ED005B6FF9 /* Floor.m */; };
+		5C224F2214A977ED005B6FF9 /* Tower.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C224F1F14A977ED005B6FF9 /* Tower.m */; };
+		5C224F2514A97A48005B6FF9 /* FloorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C224F2414A97A48005B6FF9 /* FloorController.m */; };
+		5C224F2814A9A761005B6FF9 /* FloorDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C224F2714A9A761005B6FF9 /* FloorDetailViewController.m */; };
+		5C87D18A14AB0D7C004E9337 /* BitizenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C87D18914AB0D7C004E9337 /* BitizenController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,15 +28,28 @@
 		5C224EFA14A97597005B6FF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5C224EFC14A97597005B6FF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5C224EFE14A97597005B6FF9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		5C224F0214A97597005B6FF9 /* Tiny Tower Editor-Info.plist */ = {isa = PBXFileReference; path = "Tiny Tower Editor-Info.plist"; sourceTree = "<group>"; };
+		5C224F0214A97597005B6FF9 /* Tiny Tower Editor-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tiny Tower Editor-Info.plist"; sourceTree = "<group>"; };
 		5C224F0414A97597005B6FF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5C224F0614A97597005B6FF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5C224F0814A97597005B6FF9 /* Tiny Tower Editor-Prefix.pch */ = {isa = PBXFileReference; path = "Tiny Tower Editor-Prefix.pch"; sourceTree = "<group>"; };
-		5C224F0914A97597005B6FF9 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		5C224F0814A97597005B6FF9 /* Tiny Tower Editor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tiny Tower Editor-Prefix.pch"; sourceTree = "<group>"; };
+		5C224F0914A97597005B6FF9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5C224F0A14A97597005B6FF9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5C224F0D14A97597005B6FF9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		5C224F0F14A97597005B6FF9 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
-		5C224F1014A97597005B6FF9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5C224F1714A97656005B6FF9 /* FloorsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloorsTableViewController.h; sourceTree = "<group>"; };
+		5C224F1814A97656005B6FF9 /* FloorsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorsTableViewController.m; sourceTree = "<group>"; };
+		5C224F1A14A977EC005B6FF9 /* Bitizen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bitizen.h; sourceTree = "<group>"; };
+		5C224F1B14A977EC005B6FF9 /* Bitizen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bitizen.m; sourceTree = "<group>"; };
+		5C224F1C14A977EC005B6FF9 /* Floor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Floor.h; sourceTree = "<group>"; };
+		5C224F1D14A977ED005B6FF9 /* Floor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Floor.m; sourceTree = "<group>"; };
+		5C224F1E14A977ED005B6FF9 /* Tower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tower.h; sourceTree = "<group>"; };
+		5C224F1F14A977ED005B6FF9 /* Tower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tower.m; sourceTree = "<group>"; };
+		5C224F2314A97A48005B6FF9 /* FloorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloorController.h; sourceTree = "<group>"; };
+		5C224F2414A97A48005B6FF9 /* FloorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorController.m; sourceTree = "<group>"; };
+		5C224F2614A9A760005B6FF9 /* FloorDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloorDetailViewController.h; sourceTree = "<group>"; };
+		5C224F2714A9A761005B6FF9 /* FloorDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorDetailViewController.m; sourceTree = "<group>"; };
+		5C2BBE9014A9E84100A922D6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		5C87D18814AB0D7B004E9337 /* BitizenController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitizenController.h; sourceTree = "<group>"; };
+		5C87D18914AB0D7C004E9337 /* BitizenController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitizenController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +96,23 @@
 		5C224F0014A97597005B6FF9 /* Tiny Tower Editor */ = {
 			isa = PBXGroup;
 			children = (
+				5C224F1A14A977EC005B6FF9 /* Bitizen.h */,
+				5C224F1B14A977EC005B6FF9 /* Bitizen.m */,
+				5C87D18814AB0D7B004E9337 /* BitizenController.h */,
+				5C87D18914AB0D7C004E9337 /* BitizenController.m */,
+				5C224F1C14A977EC005B6FF9 /* Floor.h */,
+				5C224F1D14A977ED005B6FF9 /* Floor.m */,
+				5C224F2314A97A48005B6FF9 /* FloorController.h */,
+				5C224F2414A97A48005B6FF9 /* FloorController.m */,
+				5C224F1E14A977ED005B6FF9 /* Tower.h */,
+				5C224F1F14A977ED005B6FF9 /* Tower.m */,
 				5C224F0914A97597005B6FF9 /* AppDelegate.h */,
 				5C224F0A14A97597005B6FF9 /* AppDelegate.m */,
 				5C224F0C14A97597005B6FF9 /* MainStoryboard.storyboard */,
-				5C224F0F14A97597005B6FF9 /* ViewController.h */,
-				5C224F1014A97597005B6FF9 /* ViewController.m */,
+				5C224F2614A9A760005B6FF9 /* FloorDetailViewController.h */,
+				5C224F2714A9A761005B6FF9 /* FloorDetailViewController.m */,
+				5C224F1714A97656005B6FF9 /* FloorsTableViewController.h */,
+				5C224F1814A97656005B6FF9 /* FloorsTableViewController.m */,
 				5C224F0114A97597005B6FF9 /* Supporting Files */,
 			);
 			path = "Tiny Tower Editor";
@@ -94,6 +125,7 @@
 				5C224F0314A97597005B6FF9 /* InfoPlist.strings */,
 				5C224F0614A97597005B6FF9 /* main.m */,
 				5C224F0814A97597005B6FF9 /* Tiny Tower Editor-Prefix.pch */,
+				5C2BBE9014A9E84100A922D6 /* Constants.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -162,7 +194,13 @@
 			files = (
 				5C224F0714A97597005B6FF9 /* main.m in Sources */,
 				5C224F0B14A97597005B6FF9 /* AppDelegate.m in Sources */,
-				5C224F1114A97597005B6FF9 /* ViewController.m in Sources */,
+				5C224F1914A97656005B6FF9 /* FloorsTableViewController.m in Sources */,
+				5C224F2014A977ED005B6FF9 /* Bitizen.m in Sources */,
+				5C224F2114A977ED005B6FF9 /* Floor.m in Sources */,
+				5C224F2214A977ED005B6FF9 /* Tower.m in Sources */,
+				5C224F2514A97A48005B6FF9 /* FloorController.m in Sources */,
+				5C224F2814A9A761005B6FF9 /* FloorDetailViewController.m in Sources */,
+				5C87D18A14AB0D7C004E9337 /* BitizenController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +310,7 @@
 				5C224F1614A97597005B6FF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

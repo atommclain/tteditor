@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FloorsTableViewController.h
 //  Tiny Tower Editor
 //
 //  Created by Adam Mclain on 12/26/11.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface FloorsTableViewController : UITableViewController
+
+@property (nonatomic, retain) NSArray *floors;
 
 @end
