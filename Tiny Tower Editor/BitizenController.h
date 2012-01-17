@@ -5,7 +5,7 @@
 
 @interface BitizenController : NSObject
 
-@property (nonatomic, readonly) NSArray *allBitizens;
+@property (nonatomic, retain, readonly) NSArray *allBitizens;
 
 - (id)initWithStrings:(NSArray *)strings;
 - (id)initWithBitizens:(NSArray *)bitizens;
