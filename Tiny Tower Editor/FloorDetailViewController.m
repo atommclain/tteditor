@@ -1,10 +1,5 @@
 //
 //  FloorDetailViewController.m
-//  Tiny Tower Editor
-//
-//  Created by Adam Mclain on 12/26/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
-//
 
 #import "FloorDetailViewController.h"
 #import "Floor.h"

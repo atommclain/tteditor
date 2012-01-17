@@ -1,6 +1,5 @@
 //
 //  Floor.h
-//  tinytowers
 
 #import <Foundation/Foundation.h>
 
