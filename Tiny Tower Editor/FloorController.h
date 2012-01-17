@@ -9,18 +9,23 @@
 #import <Foundation/Foundation.h>
 
 @class Floor;
+@class FloorTransform;
 
 @interface FloorController : NSObject
 
-- (id)initWithStrings:(NSArray *)floorStrings;
-- (id)initWithFloors:(NSArray *)floors;
-- (NSString *)floorsAsString;
+@property (nonatomic, retain, readonly) Floor *floor;
+//- (id)initWithStrings:(NSArray *)floorStrings;
+- (id)initWithString:(NSString *)floorString;
+//- (id)initWithFloors:(NSArray *)floors;
+- (id)initWithFloor:(Floor *)floor;
+//- (NSString *)floorsAsString;
 
-- (NSArray *)allFloors;
-- (NSUInteger)count;
-- (Floor *)floorAtStory:(NSUInteger)story;
-- (BOOL)buildNewFloor;
-- (BOOL)clearFloorAtStory:(NSUInteger)story;
-- (BOOL)moveFloor:(Floor *)floor toStory:(NSUInteger)story;
+
+//- (Floor *)floorAtStory:(NSUInteger)story;
+//- (BOOL)buildNewFloor;
+//- (BOOL)clearFloorAtStory:(NSUInteger)story;
+- (BOOL)clearFloor;
+//- (BOOL)moveFloor:(Floor *)floor toStory:(NSUInteger)story;
+- (BOOL)performTransformOnFloor:(FloorTransform *)transform;
 
 @end

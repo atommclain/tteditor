@@ -8,100 +8,137 @@
 
 #import "FloorController.h"
 #import "Floor.h"
+#import "FloorTransform.h"
+#import "TransformValue.h"
 
 @interface FloorController ()
-@property (nonatomic, retain) NSArray *currentFloors;
--(BOOL)repplaceFloor:(Floor *)oldFloor withFloor:(Floor *)newFloor;
+@property (nonatomic, retain, readwrite) Floor *floor;
 @end
 
 @implementation FloorController
 
-@synthesize currentFloors = m_currentFloors;
+@synthesize floor = m_floor;
 
-- (id)initWithStrings:(NSArray *)floorStrings {
+- (id)initWithString:(NSString *)floorString {
     self = [super init];
     if (self) {
-        
         NSArray *(^removeLastObject)(NSArray *) = ^(NSArray *anArray){  //TODO put this somewhere reuseable
             NSMutableArray *tempArray = [NSMutableArray arrayWithArray:anArray];
             [tempArray removeObject:[tempArray lastObject]];
             return tempArray;
         };
         
-        NSMutableArray *floors = [[NSMutableArray alloc] init];
-        for (NSString *floorString in floorStrings) {
-    
-            NSArray *floorAttributesArray = [floorString componentsSeparatedByString:@";"];
-            floorAttributesArray = removeLastObject(floorAttributesArray);
-            
-            NSMutableDictionary *attributes = [[[NSMutableDictionary alloc] init] autorelease];
-            for (NSString *attribute in floorAttributesArray) {
-                NSArray *temp = [attribute componentsSeparatedByString:@"="];
-                [attributes addEntriesFromDictionary:[NSDictionary dictionaryWithObject:[temp objectAtIndex:1] forKey:[temp objectAtIndex:0]]];
-            }
-            
-            Floor *floor = [[Floor alloc] initWithDictionary:attributes];
-            [floors addObject:floor];
-            [floor release];
+        NSArray *floorAttributesArray = removeLastObject([floorString componentsSeparatedByString:@";"]);
+        
+        NSMutableDictionary *attributes = [[[NSMutableDictionary alloc] init] autorelease];
+        for (NSString *attribute in floorAttributesArray) {
+            NSArray *temp = [attribute componentsSeparatedByString:@"="];
+            [attributes addEntriesFromDictionary:[NSDictionary dictionaryWithObject:[temp objectAtIndex:1] forKey:[temp objectAtIndex:0]]];
         }
         
-        self.currentFloors = floors;
-        [floors release];
+        Floor *floor = [[[Floor alloc] initWithDictionary:attributes] autorelease];
+        
+        if (floor == nil) {
+            [super release];
+            return nil;
+        }
+        
+        self.floor = floor;
     }
     return self;
 }
 
-- (id)initWithFloors:(NSArray *)floors {
+- (id)initWithFloor:(Floor *)floor {
     
-    for (id obj in floors) {
-        if (![obj isKindOfClass:[Floor class]]) {
-            return nil;
-        }
+    if (floor == nil) {
+        return nil;
     }
     
     self = [super init];
     if (self) {
-        self.currentFloors = floors;
+        self.floor = floor;
     }
-    
     return self;
 }
 
 - (void)dealloc {
-    self.currentFloors = nil;
+    self.floor = nil;
     [super dealloc];
 }
 
-- (NSArray *)allFloors {
-    return self.currentFloors;
-}
-
-- (NSUInteger)count {
-    return self.currentFloors.count;
-}
-
-- (NSString *)floorsAsString {
-    NSMutableString *floorsString = [[[NSMutableString alloc] init] autorelease];
-    [floorsString appendString:@"stories{"];
-    
-    for (Floor *floor in self.currentFloors) {
-        [floorsString appendFormat:@"%@,", [floor floorAsString]];
-    }
-    [floorsString appendString:@"}"];
-    return floorsString;
-}
-
-- (Floor *)floorAtStory:(NSUInteger)story {
-    Floor *returnFloor = nil;
-    for (Floor *tempFloor in self.currentFloors) {
-        if (tempFloor.floorNumber == story) {
-            returnFloor = tempFloor;
-            break;
-        }
+- (BOOL)performTransformOnFloor:(FloorTransform *)transform {
+    if (transform.floor != self.floor) {
+        return NO;
     }
     
-    return returnFloor;
+    NSDictionary *newFloorDict = [self.floor objectAsDictionary];
+    [newFloorDict setValue:transform.requestedValue.value forKey:transform.requestedValue.key];
+    Floor *newFloor = [[[Floor alloc] initWithDictionary:newFloorDict] autorelease];
+    if (newFloor == nil) {
+        return NO;
+    }
+    
+    self.floor = newFloor;
+    return YES;
+    
 }
+
+/*
+ - (id)initWithStrings:(NSArray *)floorStrings {
+ self = [super init];
+ if (self) {
+ 
+ NSArray *(^removeLastObject)(NSArray *) = ^(NSArray *anArray){  //TODO put this somewhere reuseable
+ NSMutableArray *tempArray = [NSMutableArray arrayWithArray:anArray];
+ [tempArray removeObject:[tempArray lastObject]];
+ return tempArray;
+ };
+ 
+ NSMutableArray *floors = [[NSMutableArray alloc] init];
+ for (NSString *floorString in floorStrings) {
+ 
+ NSArray *floorAttributesArray = [floorString componentsSeparatedByString:@";"];
+ floorAttributesArray = removeLastObject(floorAttributesArray);
+ 
+ NSMutableDictionary *attributes = [[[NSMutableDictionary alloc] init] autorelease];
+ for (NSString *attribute in floorAttributesArray) {
+ NSArray *temp = [attribute componentsSeparatedByString:@"="];
+ [attributes addEntriesFromDictionary:[NSDictionary dictionaryWithObject:[temp objectAtIndex:1] forKey:[temp objectAtIndex:0]]];
+ }
+ 
+ Floor *floor = [[Floor alloc] initWithDictionary:attributes];
+ [floors addObject:floor];
+ [floor release];
+ }
+ 
+ self.currentFloors = floors;
+ [floors release];
+ }
+ return self;
+ }
+ */
+
+/*
+ - (id)initWithFloors:(NSArray *)floors {
+ 
+ for (id obj in floors) {
+ if (![obj isKindOfClass:[Floor class]]) {
+ return nil;
+ }
+ }
+ 
+ self = [super init];
+ if (self) {
+ self.currentFloors = floors;
+ }
+ 
+ return self;
+ }
+ */
+
+
+/*
+
 
 -(BOOL)repplaceFloor:(Floor *)oldFloor withFloor:(Floor *)newFloor {
     if (oldFloor == nil || newFloor == nil) {
@@ -115,7 +152,9 @@
     
     return YES;
 }
+*/
 
+/*
 #warning fix the manual key
 #warning should send a message
 - (BOOL)buildNewFloor {
@@ -196,5 +235,6 @@
     return YES;
     
 }
+*/
 
 @end
