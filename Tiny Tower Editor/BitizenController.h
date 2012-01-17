@@ -9,8 +9,7 @@
 
 - (id)initWithStrings:(NSArray *)strings;
 - (id)initWithBitizens:(NSArray *)bitizens;
-- (NSString *)bitizensAsString;
 
-- (NSArray *)bitizensAtStory:(NSUInteger)story;
+//- (NSArray *)bitizensAtStory:(NSUInteger)story;
 
 @end

@@ -4,6 +4,8 @@
 #import "Tower.h"
 #import "Floor.h"
 #import "FloorController.h"
+#import "Bitizen.h"
+#import "BitizenController.h"
 
 NSString * const kCoins = @"coins";
 NSString * const kBux = @"bux";
@@ -65,7 +67,11 @@ NSString * const kBitizens = @"bitizens";
 }
 
 - (NSString *)bitizensAsString {
-    return @"";
+    NSMutableString *bitizensString = [[[NSMutableString alloc] init] autorelease];
+    for (Bitizen *bitizen in self.bitizens) {
+        [bitizensString appendFormat:@"%@,", [bitizen bitizenAsString]];
+    }
+    return bitizensString;
 }
 
 - (NSString *)floorsAsString {

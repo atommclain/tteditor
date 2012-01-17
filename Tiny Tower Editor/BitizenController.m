@@ -64,18 +64,6 @@
     return self;
 }
 
-
-- (NSString *)bitizensAsString {
-    NSMutableString *bitizensString = [[[NSMutableString alloc] init] autorelease];
-    [bitizensString appendString:@"bitizens{"];
-    
-    for (Bitizen *bitizen in self.allBitizens) {
-        [bitizensString appendFormat:@"%@,", [bitizen bitizenAsString]];
-    }
-    [bitizensString appendString:@"}"];
-    return bitizensString;
-}
-
 - (NSArray *)bitizensAtStory:(NSUInteger)story {
     NSIndexSet *indexes = [self.allBitizens indexesOfObjectsPassingTest:^(id obj, NSUInteger idx, BOOL *stop){
         if (story == [obj homeFloor] || story == [obj workFloor] ) {
