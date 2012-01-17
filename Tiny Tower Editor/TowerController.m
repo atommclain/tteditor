@@ -66,6 +66,14 @@
         
         //Create bitizens
         NSArray *bitizenStrings = componantsOfString([incomingRaw objectAtIndex:1]);
+         NSMutableArray *bitizenArray = [[NSMutableArray alloc] init];
+         for (NSString *bitizenString in bitizenStrings) {
+             Bitizen *bit = [[Bitizen alloc] initWithString:bitizenString];
+             [bitizenArray addObject:bit];
+             [bit release];
+         }
+        [attributes addEntriesFromDictionary:[NSDictionary dictionaryWithObject:bitizenArray forKey:@"bitizens"]];
+        [bitizenArray release];
         
         self.tower = [[[Tower alloc] initWithDictionary:attributes] autorelease];
     }
