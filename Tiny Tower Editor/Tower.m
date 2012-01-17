@@ -2,6 +2,7 @@
 //  Tower.m
 
 #import "Tower.h"
+#import "FloorController.h"
 
 NSString * const kCoins = @"coins";
 NSString * const kBux = @"bux";
@@ -12,6 +13,9 @@ NSString * const kAchievements = @"ach";
 NSString * const kCostumes = @"costumes";
 NSString * const kMissions = @"missions";
 
+NSString * const kFloors = @"floors";
+NSString * const kBitizens = @"bitizens";
+
 @interface Tower ()
 @property (nonatomic, assign, readwrite) NSUInteger coins;
 @property (nonatomic, assign, readwrite) NSUInteger bux;
@@ -21,6 +25,8 @@ NSString * const kMissions = @"missions";
 @property (nonatomic, retain, readwrite) NSArray *achievements;
 @property (nonatomic, retain, readwrite) NSArray *costumes;
 @property (nonatomic, retain, readwrite) NSArray *missions;
+@property (nonatomic, retain, readwrite) NSArray *floors;
+@property (nonatomic, retain, readwrite) NSArray *bitizens;
 @end
 
 @implementation Tower
@@ -33,6 +39,8 @@ NSString * const kMissions = @"missions";
 @synthesize achievements = m_achievements;
 @synthesize costumes = m_costumes;
 @synthesize missions = m_missions;
+@synthesize floors = m_floors;
+@synthesize bitizens = m_bitizens;
 
 - (id)initWithDictionary:(NSDictionary *)dict
 {
