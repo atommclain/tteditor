@@ -46,31 +46,9 @@ NSString * const kMissions = @"missions";
         self.achievements = [dict valueForKey:kAchievements];
         self.costumes = [dict valueForKey:kCostumes];
         self.missions = [dict valueForKey:kMissions];
+        self.floors = [dict valueForKey:kFloors];
     }
     return self;
-}
-
-- (id)initWithString:(NSString *)str
-{
-    NSArray *(^removeLastObject)(NSArray *) = ^(NSArray *anArray){  //TODO put this somewhere reuseable
-        NSMutableArray *tempArray = [NSMutableArray arrayWithArray:anArray];
-        [tempArray removeObject:[tempArray lastObject]];
-        return tempArray;
-    };
-    
-    NSArray *attributesArray = [str componentsSeparatedByString:@";"];
-    attributesArray = removeLastObject(attributesArray);
-    
-    NSMutableDictionary *attributes = [[[NSMutableDictionary alloc] init] autorelease];
-    for (NSString *attr in attributesArray) {
-        if ([attr isEqualToString:@"d"]) {
-            continue;
-        }
-        NSArray *temp = [attr componentsSeparatedByString:@"="];
-        [attributes addEntriesFromDictionary:[NSDictionary dictionaryWithObject:[temp objectAtIndex:1] forKey:[temp objectAtIndex:0]]];
-    }
-    
-    return [self initWithDictionary:attributes];
 }
 
 - (NSString *)description { 
