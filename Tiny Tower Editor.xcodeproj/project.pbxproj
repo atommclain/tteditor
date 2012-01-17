@@ -23,6 +23,7 @@
 		5C87D18A14AB0D7C004E9337 /* BitizenController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C87D18914AB0D7C004E9337 /* BitizenController.m */; };
 		5CF8069B14C4C21D00508A86 /* FloorTransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF8069A14C4C21D00508A86 /* FloorTransform.m */; };
 		5CF8069F14C4CBDF00508A86 /* TransformValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF8069E14C4CBDF00508A86 /* TransformValue.m */; };
+		5CF806A214C4D63C00508A86 /* TowerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CF806A114C4D63B00508A86 /* TowerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,8 @@
 		5CF8069A14C4C21D00508A86 /* FloorTransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorTransform.m; sourceTree = "<group>"; };
 		5CF8069D14C4CBDE00508A86 /* TransformValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformValue.h; sourceTree = "<group>"; };
 		5CF8069E14C4CBDF00508A86 /* TransformValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransformValue.m; sourceTree = "<group>"; };
+		5CF806A014C4D63A00508A86 /* TowerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TowerController.h; sourceTree = "<group>"; };
+		5CF806A114C4D63B00508A86 /* TowerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TowerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,10 +115,12 @@
 				5C224F2414A97A48005B6FF9 /* FloorController.m */,
 				5CF8069914C4C21C00508A86 /* FloorTransform.h */,
 				5CF8069A14C4C21D00508A86 /* FloorTransform.m */,
-				5CF8069D14C4CBDE00508A86 /* TransformValue.h */,
-				5CF8069E14C4CBDF00508A86 /* TransformValue.m */,
 				5C224F1E14A977ED005B6FF9 /* Tower.h */,
 				5C224F1F14A977ED005B6FF9 /* Tower.m */,
+				5CF806A014C4D63A00508A86 /* TowerController.h */,
+				5CF806A114C4D63B00508A86 /* TowerController.m */,
+				5CF8069D14C4CBDE00508A86 /* TransformValue.h */,
+				5CF8069E14C4CBDF00508A86 /* TransformValue.m */,
 				5C224F0914A97597005B6FF9 /* AppDelegate.h */,
 				5C224F0A14A97597005B6FF9 /* AppDelegate.m */,
 				5C224F0C14A97597005B6FF9 /* MainStoryboard.storyboard */,
@@ -213,6 +218,7 @@
 				5C87D18A14AB0D7C004E9337 /* BitizenController.m in Sources */,
 				5CF8069B14C4C21D00508A86 /* FloorTransform.m in Sources */,
 				5CF8069F14C4CBDF00508A86 /* TransformValue.m in Sources */,
+				5CF806A214C4D63C00508A86 /* TowerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
