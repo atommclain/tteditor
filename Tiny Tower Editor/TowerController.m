@@ -73,17 +73,6 @@
     return self;
 }
 
-- (NSString *)floorsAsString {
-    NSMutableString *floorsString = [[[NSMutableString alloc] init] autorelease];
-    //[floorsString appendString:@"stories{"];
-    
-    for (FloorController *floorController in self.tower.floors) {
-        [floorsString appendFormat:@"%@,", [floorController.floor floorAsString]];
-    }
-    //[floorsString appendString:@"}"];
-    return floorsString;
-}
-
 - (void)dealloc {
     self.tower = nil;
     [super dealloc];

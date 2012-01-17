@@ -2,6 +2,7 @@
 //  Tower.m
 
 #import "Tower.h"
+#import "Floor.h"
 #import "FloorController.h"
 
 NSString * const kCoins = @"coins";
@@ -63,7 +64,19 @@ NSString * const kBitizens = @"bitizens";
     return [NSString stringWithFormat:@"Coins: %i, Bux: %i", self.coins, self.bux];
 }
 
-- (NSString *)towerAsString {
+- (NSString *)bitizensAsString {
+    return @"";
+}
+
+- (NSString *)floorsAsString {
+    NSMutableString *floorsString = [[[NSMutableString alloc] init] autorelease];
+    for (FloorController *floorController in self.floors) {
+        [floorsString appendFormat:@"%@,", [floorController.floor floorAsString]];
+    }
+    return floorsString;
+}
+
+- (NSString *)towerPropertiesAsString {
     NSMutableString *returnString = [[[NSMutableString alloc] init] autorelease];
     [returnString appendString:[NSString stringWithFormat:@"%@=%i;",kCoins, self.coins]];
     [returnString appendString:[NSString stringWithFormat:@"%@=%i;",kBux, self.bux]];
@@ -73,7 +86,15 @@ NSString * const kBitizens = @"bitizens";
     [returnString appendString:[NSString stringWithFormat:@"%@=%@;",kAchievements, self.achievements]];
     [returnString appendString:[NSString stringWithFormat:@"%@=%@;",kCostumes, self.costumes]];
     [returnString appendString:[NSString stringWithFormat:@"%@=%@;",kMissions, self.missions]];
-    return returnString;
+    return returnString; 
+}
+
+- (NSString *)towerAsString {
+    NSMutableString *towerString = [[[NSMutableString alloc] init] autorelease];
+    [towerString appendFormat:@"%@|", self.towerPropertiesAsString];
+    [towerString appendFormat:@"bitizens{%@}|", self.bitizensAsString];
+    [towerString appendFormat:@"stories{%@}", self.floorsAsString];
+    return towerString;
 }
 
 @end

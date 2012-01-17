@@ -11,7 +11,6 @@
 @property (nonatomic, retain, readonly) Tower *tower;
 
 - (id)initWithString:(NSString *)str;
-- (NSString *)floorsAsString;
 - (NSUInteger)numberOfFloors;
 - (Floor *)floorAtStory:(NSUInteger)story;
 @end

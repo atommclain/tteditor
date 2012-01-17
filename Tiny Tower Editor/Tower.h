@@ -16,5 +16,8 @@
 @property (nonatomic, retain, readonly) NSArray *bitizens;
 
 - (id)initWithDictionary:(NSDictionary *)dict;
+- (NSString *)bitizensAsString;
+- (NSString *)floorsAsString;
+- (NSString *)towerPropertiesAsString;
 - (NSString *)towerAsString;
 @end
