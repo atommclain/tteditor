@@ -103,4 +103,131 @@ NSString * const kBitizens = @"bitizens";
     return towerString;
 }
 
+
+/*
+ - (NSArray *)bitizensAtStory:(NSUInteger)story {
+ NSIndexSet *indexes = [self.allBitizens indexesOfObjectsPassingTest:^(id obj, NSUInteger idx, BOOL *stop){
+ if (story == [obj homeFloor] || story == [obj workFloor] ) {
+ return YES;
+ }
+ return NO;
+ }];
+ 
+ NSMutableArray *targetArray  = [NSMutableArray array];
+ int count = [self.allBitizens count];
+ 
+ unsigned index = [indexes firstIndex];
+ while ( index != NSNotFound )
+ {
+ if ( index < count )
+ [targetArray addObject:[self.allBitizens objectAtIndex:index]];
+ 
+ index = [indexes indexGreaterThanIndex:index];
+ }
+ 
+ return targetArray;
+ }
+ */
+
+
+/*
+ 
+ 
+ -(BOOL)repplaceFloor:(Floor *)oldFloor withFloor:(Floor *)newFloor {
+ if (oldFloor == nil || newFloor == nil) {
+ return NO;
+ }
+ 
+ NSMutableArray *floors = [NSMutableArray arrayWithArray:self.currentFloors];
+ [floors removeObject:oldFloor];
+ [floors addObject:newFloor];
+ self.currentFloors = floors;
+ 
+ return YES;
+ }
+ */
+
+/*
+ #warning fix the manual key
+ #warning should send a message
+ - (BOOL)buildNewFloor {
+ NSNumber *newFloorNumber = [NSNumber numberWithUnsignedInteger:self.count + 1];
+ NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[Floor emptyFloor]];
+ [dict setValue:newFloorNumber forKey:@"s"];
+ Floor *newFloor = [[Floor alloc] initWithDictionary:dict];
+ 
+ NSMutableArray *floors = [NSMutableArray arrayWithArray:self.currentFloors];
+ [floors addObject:newFloor];
+ self.currentFloors = floors;
+ [newFloor release];
+ 
+ return YES;
+ }
+ 
+ #warning need to check if floor is an appartment
+ #warning fix the manual key
+ #warning should send a message
+ - (BOOL)clearFloorAtStory:(NSUInteger)story {
+ Floor *oldFloor = [self floorAtStory:story];
+ if (oldFloor == nil) {
+ return NO;
+ }
+ 
+ NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[Floor emptyFloor]];
+ [dict setValue:[NSNumber numberWithUnsignedInteger:story] forKey:@"s"];
+ Floor *newFloor = [[Floor alloc] initWithDictionary:dict];
+ 
+ [self repplaceFloor:oldFloor withFloor:newFloor];
+ [newFloor release];
+ 
+ return YES;
+ }
+ 
+ - (BOOL)moveFloor:(Floor *)floor toStory:(NSUInteger)story {
+ if (story > self.currentFloors.count || story == 1) {
+ return NO;
+ }
+ 
+ if (![self.currentFloors containsObject:floor]) {
+ return NO;
+ }
+ 
+ if (floor.level == story) {
+ return YES;
+ }
+ 
+ int intStart = floor.floorNumber;
+ int intEnd = story;
+ int increment = intEnd > intStart ? -1 : 1;
+ int smallStory = MIN(intStart, intEnd);
+ int bigStory = MAX(intStart, intEnd);
+ 
+ //make the new floor we're moving
+ NSMutableDictionary *newFloorDict = [NSMutableDictionary dictionaryWithDictionary:[floor objectAsDictionary]];
+ [newFloorDict setValue:[NSNumber numberWithUnsignedInteger:story] forKey:@"s"];
+ Floor *newFloor = [[Floor alloc] initWithDictionary:newFloorDict];
+ 
+ //create the array we'll iterate through
+ NSMutableArray *floors = [NSMutableArray arrayWithArray:self.currentFloors];
+ [floors removeObject:floor];
+ //can't change a mutable array we're iteraing through so set up another array
+ NSArray *tempFloors = [NSArray arrayWithArray:floors];
+ for (Floor *tempFloor in tempFloors) {
+ if (tempFloor.floorNumber >= smallStory && tempFloor.floorNumber <= bigStory) {
+ NSMutableDictionary *tempFloorDict = [NSMutableDictionary dictionaryWithDictionary:[tempFloor objectAsDictionary]];
+ [tempFloorDict setValue:[NSNumber numberWithUnsignedInteger:tempFloor.floorNumber + increment] forKey:@"s"];
+ Floor *newTempFloor = [[Floor alloc] initWithDictionary:tempFloorDict];
+ [self repplaceFloor:tempFloor withFloor:newTempFloor];
+ [newTempFloor release];
+ }
+ }
+ 
+ [self repplaceFloor:floor withFloor:newFloor];
+ [newFloor release];
+ 
+ return YES;
+ 
+ }
+ */
+
 @end
