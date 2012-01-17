@@ -57,6 +57,7 @@ NSString * const kBitizens = @"bitizens";
         self.achievements = [dict valueForKey:kAchievements];
         self.costumes = [dict valueForKey:kCostumes];
         self.missions = [dict valueForKey:kMissions];
+        self.bitizens = [dict valueForKey:kBitizens];
         self.floors = [dict valueForKey:kFloors];
     }
     return self;
