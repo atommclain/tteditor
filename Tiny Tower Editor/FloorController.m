@@ -3,8 +3,6 @@
 
 #import "FloorController.h"
 #import "Floor.h"
-#import "FloorTransform.h"
-#import "TransformValue.h"
 
 @interface FloorController ()
 @property (nonatomic, retain, readwrite) Floor *floor;
@@ -59,23 +57,6 @@
 - (void)dealloc {
     self.floor = nil;
     [super dealloc];
-}
-
-- (BOOL)performTransformOnFloor:(FloorTransform *)transform {
-    if (transform.floor != self.floor) {
-        return NO;
-    }
-    
-    NSDictionary *newFloorDict = [self.floor objectAsDictionary];
-    [newFloorDict setValue:transform.requestedValue.value forKey:transform.requestedValue.key];
-    Floor *newFloor = [[[Floor alloc] initWithDictionary:newFloorDict] autorelease];
-    if (newFloor == nil) {
-        return NO;
-    }
-    
-    self.floor = newFloor;
-    return YES;
-    
 }
 
 @end

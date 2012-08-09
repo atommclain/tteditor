@@ -11,6 +11,5 @@
 @property (nonatomic, retain, readonly) Floor *floor;
 - (id)initWithString:(NSString *)floorString;
 - (id)initWithFloor:(Floor *)floor;
-- (BOOL)performTransformOnFloor:(FloorTransform *)transform;
 
 @end

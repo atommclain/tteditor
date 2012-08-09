@@ -51,6 +51,20 @@ NSString * const kCustomName = @"n";
     return [NSDictionary dictionaryWithObjects:objects forKeys:keys];
 }
 
++ (NSDictionary *)aptFloor {
+    NSArray *objects = [NSArray arrayWithObjects:[NSNumber numberWithUnsignedInteger:0],
+                        [NSNumber numberWithUnsignedInteger:1],
+                        [NSNumber numberWithUnsignedInteger:39],
+                        [NSNumber numberWithInteger:-1],
+                        [NSNumber numberWithInteger:-1],
+                        [NSNumber numberWithInteger:-1],
+                        @"0:0:0",
+                        @"0:0:0",
+                        @"", nil];
+    NSArray *keys = [NSArray arrayWithObjects:kFloorNumber, kLevel, kFloorType, kAwaitingStock, kPTValue, kPRValue, kSTValue, kStockLevel, kCustomName, nil];
+    return [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+}
+
 - (id)initWithDictionary:(NSDictionary *)dict
 {
     self = [super init];

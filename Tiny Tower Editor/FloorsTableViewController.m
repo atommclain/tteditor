@@ -157,6 +157,20 @@
     if (indexPath.row == 0) {
         //[self.floorController buildNewFloor];
         //[self.tableView reloadData];
+        
+        NSArray *theFloors = self.towerController.tower.floors;
+        
+        int nextFloorLevel = theFloors.count +1;
+        NSMutableDictionary *futureFloorDick = [[Floor aptFloor] mutableCopy];
+        [futureFloorDick setValue:[NSNumber numberWithInt:nextFloorLevel] forKey:@"s"];
+        
+        Floor *emptyFloor = [[Floor alloc] initWithDictionary:futureFloorDick];
+        FloorController *controller = [[FloorController alloc] initWithFloor:emptyFloor];
+        self.towerController.tower.floors = [theFloors arrayByAddingObject:controller];
+        
+        
+        
+        [self.tableView reloadData];
     }
     // Navigation logic may go here. Create and push another view controller.
     /*

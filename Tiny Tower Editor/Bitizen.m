@@ -16,8 +16,8 @@ NSString * const kCostume = @"c";
 @property (nonatomic, assign, readwrite) NSUInteger homeFloor;
 @property (nonatomic, assign, readwrite) NSInteger workFloor;
 @property (nonatomic, assign, readwrite) NSUInteger dreamJobID;
-@property (nonatomic, assign, readwrite) NSUInteger sValue;
-@property (nonatomic, assign, readwrite) NSUInteger vsValue;
+//@property (nonatomic, assign, readwrite) NSUInteger sValue;
+//@property (nonatomic, assign, readwrite) NSUInteger vsValue;
 @property (nonatomic, retain, readwrite) NSString *costume;
 @end
 

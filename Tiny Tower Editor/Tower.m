@@ -28,7 +28,7 @@ NSString * const kBitizens = @"bitizens";
 @property (nonatomic, retain, readwrite) NSArray *achievements;
 @property (nonatomic, retain, readwrite) NSArray *costumes;
 @property (nonatomic, retain, readwrite) NSArray *missions;
-@property (nonatomic, retain, readwrite) NSArray *floors;
+//@property (nonatomic, retain, readwrite) NSArray *floors;
 @property (nonatomic, retain, readwrite) NSArray *bitizens;
 @end
 
