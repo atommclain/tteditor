@@ -16,6 +16,26 @@
 
 @synthesize tower = m_tower;
 
+static TowerController *instance = NULL;
+
++ (TowerController *)sharedInstance;
+{
+    @synchronized(self)
+    {
+        if (instance == NULL)
+        {
+            NSString* path = [[NSBundle mainBundle] pathForResource:@"game" ofType:@"txt"];
+            NSString* rawData = [NSString stringWithContentsOfFile:path
+                                                          encoding:NSUTF8StringEncoding
+                                                             error:NULL];
+        
+            instance = [[self alloc] initWithString:rawData];
+        }
+    }
+    
+    return(instance);
+}
+
 - (id)initWithString:(NSString *)str
 {
     if ([super init]) {
@@ -39,11 +59,11 @@
             return anArray;
         };
         
-        NSArray *incomingRaw = [str componentsSeparatedByString:@"|"];
+        NSArray *modelObjectsStrings = [str componentsSeparatedByString:@"|"];
         NSMutableDictionary *attributes = [[[NSMutableDictionary alloc] init] autorelease];
         
         //Create Tower specific attributes
-        NSArray *attributesArray = [[incomingRaw objectAtIndex:0] componentsSeparatedByString:@";"];
+        NSArray *attributesArray = [[modelObjectsStrings objectAtIndex:0] componentsSeparatedByString:@";"];
         attributesArray = removeLastObject(attributesArray);
         for (NSString *attr in attributesArray) {
             if ([attr isEqualToString:@"d"]) {
@@ -54,7 +74,7 @@
         }
         
         //Create floors
-        NSArray *floorStrings = componantsOfString([incomingRaw objectAtIndex:2]);
+        NSArray *floorStrings = componantsOfString([modelObjectsStrings objectAtIndex:2]);
         NSMutableArray *floorArray = [[NSMutableArray alloc] init];
         for (NSString *floorString in floorStrings) {
             FloorController *fc = [[FloorController alloc] initWithString:floorString];
@@ -65,7 +85,7 @@
         [floorArray release];
         
         //Create bitizens
-        NSArray *bitizenStrings = componantsOfString([incomingRaw objectAtIndex:1]);
+        NSArray *bitizenStrings = componantsOfString([modelObjectsStrings objectAtIndex:1]);
          NSMutableArray *bitizenArray = [[NSMutableArray alloc] init];
          for (NSString *bitizenString in bitizenStrings) {
              Bitizen *bit = [[Bitizen alloc] initWithString:bitizenString];

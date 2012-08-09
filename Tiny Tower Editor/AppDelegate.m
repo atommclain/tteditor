@@ -2,6 +2,8 @@
 //  AppDelegate.m
 
 #import "AppDelegate.h"
+#import "TowerController.h"
+#import "Tower.h"
 
 @implementation AppDelegate
 
@@ -29,10 +31,13 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-     If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-     */
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDir = [paths objectAtIndex: 0];
+    NSString *docFile = [docDir stringByAppendingPathComponent: @"game.txt"];
+    
+    //your variable "deck"
+    
+    [[[[TowerController sharedInstance] tower] towerAsString] writeToFile:docFile atomically:YES encoding:NSUTF8StringEncoding error:NULL];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

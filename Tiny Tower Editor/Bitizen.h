@@ -8,8 +8,8 @@
 @property (nonatomic, readonly) NSUInteger homeFloor;
 @property (nonatomic, readonly) NSInteger workFloor;
 @property (nonatomic, readonly) NSUInteger dreamJobID;
-@property (nonatomic, readonly) NSUInteger sValue; //serial?
-@property (nonatomic, readonly) NSUInteger vsValue;
+@property (nonatomic) NSUInteger sValue; //serial?
+@property (nonatomic) NSUInteger vsValue;
 @property (nonatomic, retain, readonly) NSString *costume;
 
 - (id)initWithDictionary:(NSDictionary *)dict;

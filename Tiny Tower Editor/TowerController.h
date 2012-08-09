@@ -10,7 +10,9 @@
 
 @property (nonatomic, retain, readonly) Tower *tower;
 
++ (TowerController *)sharedInstance;
 - (id)initWithString:(NSString *)str;
 - (NSUInteger)numberOfFloors;
 - (Floor *)floorAtStory:(NSUInteger)story;
+
 @end

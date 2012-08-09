@@ -12,7 +12,7 @@
 @property (nonatomic, retain, readonly) NSArray *achievements;
 @property (nonatomic, retain, readonly) NSArray *costumes;
 @property (nonatomic, retain, readonly) NSArray *missions;
-@property (nonatomic, retain, readonly) NSArray *floors;
+@property (nonatomic, retain) NSArray *floors;
 @property (nonatomic, retain, readonly) NSArray *bitizens;
 
 - (id)initWithDictionary:(NSDictionary *)dict;
